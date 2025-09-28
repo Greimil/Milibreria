@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Librería Personal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Mi Librería</div>
+      <nav>
+        <ul id="ulmenu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Mis Libros</a></li>
+          <li><a href="#ultimo-leido">Recientes</a></li>
+        </ul>
+
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInputBar"
+            placeholder="Buscar libros..."
+            autocomplete="off"
+          />
+          <button>
+            <span class="material-symbols-outlined" id="searchIcon">
+              search
+            </span>
+          </button>
+          <ul class="suggestions"></ul>
+        </div>
+
+        <img src="/src/menuSvg.svg" alt="menuBuger" id="btnoptionsMenu" />
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Gestiona tu colección de libros personales</h1>
+        <a href="#catalogo" class="cta-button">Ver Mis Libros</a>
+      </section>
+
+      <section id="catalogo" class="catalogo">
+        <div class="title-filter">
+          <h2>Mi Catálogo</h2>
+          <div class="options">
+            <div class="filters"></div>
+            <button id="btnAddBoook">Añadir libro</button>
+          </div>
+        </div>
+        <div class="book-grid"></div>
+
+        <div id="bookModal" class="modal">
+          <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <h2></h2>
+            <form id="bookForm">
+              <label>Título:</label>
+              <input type="text" name="title" required />
+
+              <label>Autor:</label>
+              <input type="text" name="author" required />
+
+              <label>Año:</label>
+              <input type="number" name="year" required />
+
+              <label>Edición:</label>
+              <input type="text" name="edition" required />
+
+              <label>URL de la portada:</label>
+              <input type="text" id="pictureURL" name="pictureURL" />
+
+              <label>Descripción:</label>
+              <textarea id="description" name="description"></textarea>
+
+              <label>Estado:</label>
+              <select id="status" name="status">
+                <option value="No leído">No leído</option>
+                <option value="En progreso">En progreso</option>
+                <option value="Completado">Completado</option>
+              </select>
+
+              <label>Género:</label>
+              <input id="genero" type="text" name="genero" />
+              <button id="btnSubmit" type="submit">Agregar libro</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="ultimo-leido" class="ultimo-leido">
+        <h2 class="h2Ultimo">Recien leído</h2>
+        <article class="book-highlight">
+          <figure class="infoBookPic">
+            <img
+              src="https://m.media-amazon.com/images/I/41+aXH4mDbL._SX342_SY445_FMwebp_.jpg"
+              alt="Portada del libro Introduction to Algorithms"
+            />
+          </figure>
+          <div class="book-info">
+            <h2>Recien leído</h2>
+            <figure class="book-coverBookInfo">
+              <img
+                src="https://m.media-amazon.com/images/I/41+aXH4mDbL._SX342_SY445_FMwebp_.jpg"
+                alt="Portada del libro Introduction to Algorithms"
+              />
+            </figure>
+            <h3 class="book-title">Introduction to Algorithms</h3>
+            <div class="book-meta">
+              <span class="book-author">Thomas H. Cormen</span> |
+              <span class="book-year">1990</span> |
+              <span class="book-genre">Algoritmos</span> |
+              <span class="book-edition">3ra edición</span> |
+            </div>
+            <p class="book-description">
+              Data Structures And Algorithms Made Easy: Data Structures and
+              Algorithmic Puzzles" is a book that offers solutions to complex
+              data structures and algorithms. There are multiple solutions for
+              each problem and the book is coded in C/C++, it comes handy as an
+              interview and exam guide for computer scientists. It can be used
+              as a reference manual by those readers in the computer science
+              industry. This book serves as guide to prepare for interviews,
+              exams, and campus work. In short, this book offers solutions to
+              various complex data structures and algorithmic problems.
+            </p>
+            <button>Continuar leyendo</button>
+          </div>
+
+          <figure class="book-cover">
+            <img
+              src="https://m.media-amazon.com/images/I/41+aXH4mDbL._SX342_SY445_FMwebp_.jpg"
+              alt="Portada del libro Introduction to Algorithms"
+            />
+          </figure>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Libros & Sueños. Todos los derechos reservados.
+        <strong
+          ><a href="https://greydevporfolio.netlify.app/" class="signature"
+            >&lt;GreyDev/&gt;</a
+          ></strong
+        >
+      </p>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
